@@ -1,0 +1,21 @@
+{
+  "name": "learning-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstrother/learning-typescript.git"
+  },
+  "author": "Jim Strother",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jstrother/learning-typescript/issues"
+  },
+  "homepage": "https://github.com/jstrother/learning-typescript#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
