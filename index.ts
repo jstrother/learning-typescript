@@ -103,3 +103,37 @@ let p = {
 };
 
 fullName(p);
+
+class Employee {
+    public employeeName: string;
+    // public is default/inferred and is also accessible anywhere in program
+    // private restricts access and prevents accessibility from outside class
+    // protected restricts access and prevents accessibility from outside class or any classes extended from it
+
+    constructor(name: string) {
+        this.employeeName = name;
+    }
+
+    greet() {
+        console.log(`Good morning, ${this.employeeName}`);
+    }
+}
+
+class Manager extends Employee {
+    constructor(mangerName: string) {
+        super(mangerName);
+    }
+
+    delegateWork() {
+        console.log(`Manager delegating tasks`);
+    }
+}
+
+let emp1 = new Employee('Jim');
+console.log(emp1.employeeName);
+emp1.greet();
+
+let m1 = new Manager('Deb');
+m1.delegateWork();
+m1.greet();
+console.log(m1.employeeName);

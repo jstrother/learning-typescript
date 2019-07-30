@@ -1,4 +1,17 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 exports.__esModule = true;
 var message = 'Hello, World';
 console.log(message);
@@ -80,3 +93,32 @@ var p = {
     lastName: 'Wayne'
 };
 fullName(p);
+var Employee = /** @class */ (function () {
+    // public is default/inferred and is also accessible anywhere in program
+    // private restricts access and prevents accessibility from outside class
+    // protected restricts access and prevents accessibility from outside class or any classes extended from it
+    function Employee(name) {
+        this.employeeName = name;
+    }
+    Employee.prototype.greet = function () {
+        console.log("Good morning, " + this.employeeName);
+    };
+    return Employee;
+}());
+var Manager = /** @class */ (function (_super) {
+    __extends(Manager, _super);
+    function Manager(mangerName) {
+        return _super.call(this, mangerName) || this;
+    }
+    Manager.prototype.delegateWork = function () {
+        console.log("Manager delegating tasks");
+    };
+    return Manager;
+}(Employee));
+var emp1 = new Employee('Jim');
+console.log(emp1.employeeName);
+emp1.greet();
+var m1 = new Manager('Deb');
+m1.delegateWork();
+m1.greet();
+console.log(m1.employeeName);
