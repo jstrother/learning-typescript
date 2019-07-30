@@ -48,3 +48,14 @@ if (hasName(myVariable2)) console.log(myVariable2.name);
 
 // myVariable2(); throws error, but meant to illustrate that you can attempt to call type any as a function even if it isn't, while type unknown prevents this
 (myVariable2 as string).toUpperCase();
+
+let a;  // with no type declaration, a can be anything at all at any time it is reassigned
+a = 10;
+a = true;
+
+let b = 20;
+// b = true; throws error as Typescript infers that b is a number from the delaration statement
+
+let multiType: number | boolean; // type union
+multiType = 20;
+multiType = true;
