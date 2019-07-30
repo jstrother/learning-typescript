@@ -59,3 +59,21 @@ let b = 20;
 let multiType: number | boolean; // type union
 multiType = 20;
 multiType = true;
+
+function add(num1: number, num2?: number): number {
+    if (num2) {
+        return num1 + num2;
+    }
+    else {
+        return num1;
+    }
+}
+add(5, 10);
+// add(5, '10'); throws error as the second parameter is not of type number
+
+add(5); // the ? in num2 above allows this function to be called with just one of two parameters, otherwise Typescript will throw an error assuming that all parameters are required
+
+function add2(num1: number, num2: number = 10): number {
+    return num1 + num2;
+}
+add(5);
